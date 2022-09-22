@@ -1,0 +1,6 @@
+html, body, #_next, .fui-FluentProvider {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
