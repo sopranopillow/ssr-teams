@@ -9,93 +9,42 @@ import {
   Call24Regular,
   Document24Regular,
   AppFolder24Regular,
-  GridDots24Regular,
-  Search24Regular,
-  MoreHorizontal24Regular,
 } from "@fluentui/react-icons";
-import {
-  ToggleButton,
-  FluentProvider,
-  teamsLightTheme,
-  Button,
-  Input,
-  Avatar,
-} from "@fluentui/react-components";
+import { Header, Rail, AppBar, AppBarProps, Conversation } from "../components";
 
-const appBarItems: { [key: string]: Omit<AppBarItemProps, "children"> } = {
+const appBarData: AppBarProps["appBarData"] = {
   Activity: {
-    Icon: Alert24Regular,
+    icon: <Alert24Regular />,
   },
   Chat: {
-    Icon: Chat24Regular,
+    icon: <Chat24Regular />,
   },
   Teams: {
-    Icon: PeopleTeam24Regular,
+    icon: <PeopleTeam24Regular />,
   },
   Calendar: {
-    Icon: CalendarLtr24Regular,
+    icon: <CalendarLtr24Regular />,
   },
   Calls: {
-    Icon: Call24Regular,
+    icon: <Call24Regular />,
   },
   Files: {
-    Icon: Document24Regular,
+    icon: <Document24Regular />,
   },
   Apps: {
-    Icon: AppFolder24Regular,
+    icon: <AppFolder24Regular />,
   },
 };
 
 const Home: NextPage = () => {
   return (
-    <FluentProvider theme={teamsLightTheme}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <Button appearance="transparent">
-            <GridDots24Regular />
-          </Button>
-          <Input contentBefore={<Search24Regular />} placeholder="Search" />
-          <Button appearance="transparent">
-            <MoreHorizontal24Regular />
-          </Button>
-          <Avatar name="Kevin Stugis" badge={{ status: "available" }} />
-        </div>
-        <AppBar>
-          {Object.keys(appBarItems).map((k) => (
-            <AppBarItem key={`appBarItem-${k}`} {...appBarItems[k]}>
-              {k}
-            </AppBarItem>
-          ))}
-        </AppBar>
-        <div className={styles.rail}>Rail</div>
-        <div className={styles.content}>Content</div>
-      </div>
-    </FluentProvider>
+    <div className={styles.container}>
+      <Header />
+      <AppBar appBarData={appBarData} />
+      <Rail />
+      <Conversation />
+    </div>
   );
 };
 
 export default Home;
-
-const AppBar: React.FunctionComponent<{ children: React.ReactElement[] }> = ({
-  children,
-}) => {
-  return <ul className={styles.bar}>{children}</ul>;
-};
-
-type AppBarItemProps = {
-  Icon: any;
-  children: string;
-};
-
-const AppBarItem: React.FC<AppBarItemProps> = ({ children, Icon }) => {
-  return (
-    <li className={styles.barItem}>
-      <ToggleButton appearance="transparent">
-        <>
-          <Icon />
-          {children}
-        </>
-      </ToggleButton>
-    </li>
-  );
-};

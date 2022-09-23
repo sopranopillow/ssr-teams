@@ -1,0 +1,71 @@
+.rail {
+    background-color: var(--colorBrandBackground1);
+    grid-area: rail;
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.12);
+}
+
+.railHeader {
+    display: flex;
+    height: 60px;
+    align-items: center;
+}
+
+.railHeader > h2 {
+    margin: 0;
+    padding-left: 14px
+}
+
+.railBody{
+    display: flex;
+    flex-direction: column;
+    gap: 8px 0px;
+    height: 100%;
+    padding: 4px;
+}
+
+.railItem {
+    all: unset;
+    box-sizing: border-box;
+    display: grid;
+    width: 100%;
+    border-radius: 15px;
+    padding: 8px;
+    grid-auto-flow: column;
+    grid-template-columns: max-content 1fr;
+    column-gap: 8px;
+}
+
+.railItem:hover {
+    background-color: var(--colorBrandBackground2);
+}
+
+.railItemSelected {
+    background-color: #d0d6f6;
+}
+
+.railItemSelected.railItem:hover {
+    background-color: #c6cffd;
+}
+
+.avatar {
+    grid-row-start: span 2;
+    align-self: center;
+}
+
+.title {
+    display: grid;
+    grid-template-areas: "title date";
+    grid-template-columns: 1fr max-content;
+    width: 100%;
+}
+
+.titleText {
+    grid-area: title;
+    place-self: start;
+    font-weight: 500;
+}
+
+.titleDate {
+    grid-area: date;
+    place-self: end;
+}

@@ -1,0 +1,12 @@
+.bar {
+    background-color: var(--colorBrandBackground2);
+    grid-area: bar;
+    padding-top: 10px;
+}
+
+.bar > button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+}

@@ -1,6 +1,29 @@
-html, body, #_next, .fui-FluentProvider {
+html, body, body > div, .fui-FluentProvider {
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--colorBrandBackground2);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c6cffd;
 }

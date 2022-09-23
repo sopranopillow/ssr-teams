@@ -3,44 +3,9 @@
   width: 100%;
   height: 100%;
 
-  grid-template-columns: 80px 1fr 2fr;
+  grid-template-columns: 80px 400px 2fr;
   grid-template-rows: 50px 1fr;
   grid-template-areas:
     "header header header"
     "bar rail content";
-}
-
-.header {
-  background-color: rgb(68, 71, 145);
-  grid-area: header;
-}
-
-.bar {
-  background-color: rgb(235, 235, 235);
-  grid-area: bar;
-  padding: 0;
-  margin: 0;
-}
-
-.barItem {
-  list-style-type: none;
-}
-
-.barItem > button {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  min-height: 80px;
-}
-
-.rail {
-  background-color: red;
-  grid-area: rail;
-}
-
-.content {
-  background-color: green;
-  grid-area: content;
 }

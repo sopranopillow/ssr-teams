@@ -1,0 +1,54 @@
+.header {
+    background-color: var(--colorBrandForeground2);
+    grid-area: header;
+    display: grid;
+    grid-template-areas: "headerLeft headerCenter headerRight";
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.headerItem {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.headerItem > button {
+    color: lightgray;
+    min-width: 50px;
+}
+
+.headerItem > button:hover {
+    color: white;
+}
+
+.headerLeft{
+    grid-area: headerLeft;
+    place-self: start;
+}
+
+.headerCenter{
+    grid-area: headerCenter;
+    place-self: center;
+}
+
+.searchBar {
+    height: 70%;
+    width: 400px;
+}
+
+.headerRight{
+    grid-area: headerRight;
+    place-self: end;
+}
+
+.persona {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.menuItem {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}

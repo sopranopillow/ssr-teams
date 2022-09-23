@@ -1,0 +1,4 @@
+.content {
+    background-color: var(--colorBrandBackground1);
+    grid-area: content;
+}

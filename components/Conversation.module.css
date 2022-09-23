@@ -1,0 +1,29 @@
+.conversation {
+    display: grid;
+    grid-template-areas: "header" "body" "input";
+    grid-template-rows: 60px 1fr 80px;
+}
+
+.conversationHeader {
+    display: flex;
+    grid-area: header;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.conversationHeader > h2 {
+    margin: 0;
+    max-width: 400px;
+}
+
+.conversationBody {
+    grid-area: body;
+    background-color: bisque;
+    overflow-y: scroll;
+}
+
+.conversationInput {
+    grid-area: input;
+    background-color: aquamarine;
+}
