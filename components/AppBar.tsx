@@ -13,7 +13,12 @@ export const AppBar: React.FC<AppBarProps> = ({ appBarData }) => {
   const tabs = Object.keys(appBarData);
 
   return (
-    <TabList vertical className={styles.bar} appearance="transparent">
+    <TabList
+      defaultSelectedValue={"Chat"}
+      vertical
+      className={styles.bar}
+      appearance="transparent"
+    >
       {tabs.map((k) => (
         <Tab
           className={styles.barItem}

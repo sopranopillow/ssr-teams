@@ -7,46 +7,14 @@ import {
 import React from "react";
 import styles from "./Rail.module.css";
 
-type RailData = {
-  [k: string]: Omit<RailItemProps, "setPressed" | "id">;
+export type RailProps = {
+  railData: {
+    [k: string]: Omit<RailItemProps, "setPressed" | "id">;
+  };
 };
 
-const railData: RailData = {
-  "1": {
-    title: "Esteban Munoz Facusse",
-    avatarProps: {
-      name: "Esteban Munoz Facusse",
-    },
-    preview: "Hey, how are you?",
-    date: "9/12",
-  },
-  "2": {
-    title: "Bill Gates",
-    avatarProps: {
-      name: "Bill Gates",
-    },
-    preview: "Hey, how are you?",
-    date: "9/12",
-  },
-  "3": {
-    title: "Satya Nadella",
-    avatarProps: {
-      name: "Satya Nadella",
-    },
-    preview: "Hey, how are you?",
-    date: "9/12",
-  },
-  "4": {
-    title: "Olorin The Gray",
-    avatarProps: {
-      name: "Olorin The Gray",
-    },
-    preview: "Hey, how are you?",
-    date: "9/12",
-  },
-};
-
-export const Rail: React.FC = () => {
+export const Rail: React.FC<RailProps> = (props) => {
+  const { railData } = props;
   const [selectedId, setSelectedId] = React.useState<string | undefined>();
 
   const setPressed = (id: string) => {

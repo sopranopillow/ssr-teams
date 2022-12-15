@@ -1,7 +1,7 @@
 .conversation {
     display: grid;
-    grid-template-areas: "header" "body" "input";
-    grid-template-rows: 60px 1fr 80px;
+    grid-template-areas: "header" "divider" "body" "input";
+    grid-template-rows: 60px max-content 1fr 80px;
 }
 
 .conversationHeader {
@@ -19,11 +19,94 @@
 
 .conversationBody {
     grid-area: body;
-    background-color: bisque;
     overflow-y: scroll;
+    display: flex;
+    place-self: end;
+    flex-direction: column;
+    grid-template-rows: max-content;
+    width: 100%;
 }
 
 .conversationInput {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: ". messageInput ." ". messageSend .";
     grid-area: input;
-    background-color: aquamarine;
+    padding: 4px 0;
+}
+
+.messageInput {
+    grid-area: messageInput;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.messageSend {
+    grid-area: messageSend;
+    place-self: end;
+}
+
+.messageGroup {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: max-content;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 10px 0;
+}
+
+.messageGroupLeft {
+    padding-right: 10px;
+    padding-bottom: 4px;
+    place-self: end;
+}
+
+.messageGroupCenter {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 6px 0;
+    padding: 0 10px;
+}
+
+.messageGroupRight {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-left: 10px;
+    padding-bottom: 4px;
+}
+
+.message {
+    display: grid;
+    grid-template-areas: "name date" "text text";
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0 0 2px rgb(184, 184, 184);
+}
+
+.messageMine {
+    background-color: var(--colorBrandBackground2);
+}
+
+.messageTheirs {
+    background-color: var(--colorNeutralBackground2);
+    place-self: end;
+}
+
+.messageText {
+    grid-area: text;
+}
+
+.messageName {
+    grid-area: name;
+    font-weight: 600;
+    place-self: start;
+    font-size: 12px;
+}
+
+.messageDate {
+    grid-area: date;
+    font-size: 12px;
+    place-self: end;
+    padding-left: 10px;
 }

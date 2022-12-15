@@ -10,7 +10,62 @@ import {
   Document24Regular,
   AppFolder24Regular,
 } from "@fluentui/react-icons";
-import { Header, Rail, AppBar, AppBarProps, Conversation } from "../components";
+import {
+  Header,
+  Rail,
+  AppBar,
+  AppBarProps,
+  Conversation,
+  RailProps,
+} from "../components";
+
+const Home: NextPage = () => {
+  return (
+    <div className={styles.container}>
+      <Header />
+      <AppBar appBarData={appBarData} />
+      <Rail railData={railData} />
+      <Conversation />
+    </div>
+  );
+};
+
+export default Home;
+
+const railData: RailProps["railData"] = {
+  "1": {
+    title: "Esteban Munoz Facusse",
+    avatarProps: {
+      name: "Esteban Munoz Facusse",
+    },
+    preview: "Hey, how are you?",
+    date: "9/12",
+  },
+  "2": {
+    title: "Bill Gates",
+    avatarProps: {
+      name: "Bill Gates",
+    },
+    preview: "Hey, how are you?",
+    date: "9/12",
+  },
+  "3": {
+    title: "Satya Nadella",
+    avatarProps: {
+      name: "Satya Nadella",
+    },
+    preview: "Hey, how are you?",
+    date: "9/12",
+  },
+  "4": {
+    title: "Olorin",
+    avatarProps: {
+      name: "Olorin",
+    },
+    preview: "Hey, how are you?",
+    date: "9/12",
+  },
+};
 
 const appBarData: AppBarProps["appBarData"] = {
   Activity: {
@@ -35,16 +90,3 @@ const appBarData: AppBarProps["appBarData"] = {
     icon: <AppFolder24Regular />,
   },
 };
-
-const Home: NextPage = () => {
-  return (
-    <div className={styles.container}>
-      <Header />
-      <AppBar appBarData={appBarData} />
-      <Rail />
-      <Conversation />
-    </div>
-  );
-};
-
-export default Home;
